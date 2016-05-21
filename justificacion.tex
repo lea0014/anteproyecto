@@ -1,0 +1,50 @@
+\section*{Justificación}
+En la actualidad las redes informáticas son la estructura fundamental para las operaciones diarias de cualquier empresa o institución pública. A medida que estas entidades crecen, también crece el volumen de datos generados, demandando así una infraestructura de red más compleja. Al incrementar la extensión de estas redes, incrementa también la cantidad de puntos propensos a sufrir fallas, por lo que mantener una buena performance en el funcionamiento general del sistema se convierte en una tarea difícil. 
+
+Podemos diferenciar dos tipos de empresas que utilizan infraestructura de redes: aquellas que transfieren información en sus redes internas y hacia otras redes como parte de sus operaciones diarias, y aquellas que ofrecen como producto o servicio soluciones basadas en telecomunicaciones a través de redes informáticas (i.e. proveedores de internet, telecomunicaciones, soluciones a medida, etc). En ambos casos, el intercambio de datos a través de redes informáticas es la columna vertebral de la organización, y por lo tanto es necesario que funcionen adecuadamente; en el segundo caso, su atención está centrada principalmente en aprovechar de la manera más eficiente la infraestructura de la que disponen con el fin de maximizar sus ganancias.
+
+En la actualidad las herramientas disponibles para monitoreo de redes brindan reportes basados en estadísticas. La empresa Cisco introduce una característica en sus dispositivos llamada NetFlow, la cual permite recolectar información IP sobre el tráfico de red. Otros fabricantes introducen características similares pero con nombres diferentes: Traffic Flow de MikroTik, NetStream de HP, entre otros. Otra alternativa para monitorear la actividad en una interfaz de red es la herramienta \textit{tcpdump}, disponible en sistemas GNU/Linux. Si bien las soluciones basadas en NetFlow y protocolos similares permiten la visualización de datos provenientes de diferentes dispositivos, es un servicio que proveen pocas empresas, y a costos elevados. Otra forma de monitorear el comportamiento del tráfico de red es almacenar todos los eventos que ocurren en la red y luego generar informes utilizando procesos \textit{batch} sobre el conjunto de datos. Esto no solo es un proceso lento, sino que requiere almacenar grandes volúmenes de datos. Más aún, los informes se generan horas o días después de ocurridos los eventos, cuando generalmente ya no son útiles.
+
+Las redes de una organización están compuestas por dispositivos de infraestructura como routers, switches, firewalls y servidores de aplicación. Las redes, y por lo tanto su complejidad, crecen al mismo ritmo que lo hacen las organizaciones.
+Lo mismo es válido para las empresas que proveen Internet como servicio (o IaaS por Internet as a Service), pero a escalas mayores. Como parte fundamental de la infraestructura de cualquier tipo de empresa, contar con la información más actualizada posible de la evolución del tráfico de red es esencial. Es por esto que el monitoreo en tiempo real de redes de información es un herramienta de gran utilidad pues permite contar con información sobre el estado actual de la red al instante. El proceso de toma de decisiones a la hora de invertir en infraestructura se ve facilitado con la información que puede extraerse del uso actual de las redes. Por ejemplo, una empresa podría decidir si invertir en una conexión a Internet de mayor velocidad o bloquear el acceso a algún servicio que se observa, causa gran demanda de ancho de banda. De la misma manera, una empresa cuya actividad es brindar servicios de conexión a Internet, podría estar interesada en generar un \textit{HeatMap} \footnote{Diagrama que muestra como se conectan los dispositivos y describe el tráfico actual con diferentes colores, asociados usualmente a temperaturas (de azul a rojo).} de los routers de su infraestructura para decidir donde realizar la próxima gran inversión de infraestructura. El monitoreo en tiempo real de la infraestructura de red puede hacer también que la tarea de administrar y detectar problemas en una red sea mucho más sencilla y rápida.
+
+Sin duda alguna, la cantidad de dispositivos conectados a Internet crece día a día y con ellos lo hace la demanda de la infraestructura de red necesaria para brindar un servicio de calidad. Contar con información del uso de las redes es fundamental para hacer estimaciones para inversiones a futuro, y permite determinar si los recursos disponibles están siendo utilizados de manera eficiente.
+
+Finalmente, contar con esta información es una gran ayuda para mejorar la seguridad de las redes. Muchos de los ataques a redes informáticas son realizados por usuarios fuera de la red que no tienen acceso físico a la misma, pero muchos de los ataques más peligrosos son llevados a cabo por usuarios internos. Tener información sobre el tráfico de la red puede ser determinante para identificar el causante de estos ataques.
+
+\section*{Objetivos}
+\subsection*{Generales}
+Diseñar un sistema que genere informes en tiempo real del tráfico de red en redes informáticas.
+\subsection*{Específicos}
+\begin{itemize}
+\item Diseñar un sistema de monitoreo independiente de una plataforma de hardware específica.
+\item Diseñar un sistema de código abierto.
+\item Identificar las tecnologías y herramientas adecuadas para el diseño del sistema.
+\end{itemize}
+
+\section*{Alcances}
+
+\subsection*{Funcionales}
+\begin{itemize}
+	\item El sistema proveerá una interfaz de visualización de los datos.
+	\item El sistema permitirá mostrar distintos tipos de informes en tiempo real según filtros determinados.
+	\item El sistema ofrecerá estadísticas generales de la red.
+	\item Se utilizarán tecnologías y herramientas de software libre.
+\end{itemize}
+
+\subsection*{No Funcionales}
+\begin{itemize}
+	\item El sistema será tolerante a fallos en los distintos nodos del sistema.
+	\item El sistema será fácilmente ampliable a medida que crezca la infraestructura de la red informática.
+\end{itemize}
+
+\subsubsection{Exclusiones}
+El proyecto no contempla la instalación ni la puesta en funcionamiento del sistema.
+
+\subsubsection{Supuestos}
+Los datos necesarios para realizar pruebas pueden ser generados arbitrariamente.
+El término \textit{tiempo real} refiere al denominado \textit{tiempo real blando}, es decir, no es necesario asegurar la ejecución de ciertas tareas o mostrar informes en el mismo instante en el que se generan los datos. La generación de los informes tendrá entonces demoras de cientos de milisegundos.
+
+\subsubsection{Criterios de Aceptación}
+Se considera que el proyecto está aceptado cuando cumple en un 90\% los requisitos funcionales, con un nivel mínimo de aceptación del 75\%.
+

@@ -1,0 +1,43 @@
+\documentclass[a4paper,10pt, oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[style=ieee,backend=bibtex]{biblatex}
+\usepackage{graphicx}
+
+\bibliography{JOA_entrega.bib}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.25\textwidth]{Universidad_del_Litoral}\par\vspace{1cm}
+	{\scshape\LARGE Universidad Nacional del Litoral \par}
+	\vspace{1cm}
+	{\scshape\Large Proyecto Final de Carrera\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Diseño de un sistema para la visualización en tiempo real del tráfico de red en redes informáticas.\par}
+	\vspace{2cm}
+	{\Large\itshape Pineda Leandro\par}
+	\vfill
+	dirijido por\par
+	Ing. Gabriel \textsc{Filippa}
+
+	\vfill
+	
+	% Bottom of the page
+	{\large \today\par}
+
+\end{titlepage}
+
+
+\include{justificacion}
+\include{metodologia}
+\newpage
+
+\nocite{*}
+\printbibliography
+
+\end{document}
+
+
+
+
