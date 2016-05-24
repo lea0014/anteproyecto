@@ -1,16 +1,49 @@
 \section*{Metodología}
 
-La metodología de ejecución del proyecto tendrá un enfoque basado en métodos ágiles, tomando como referencia, técnicas y herramientas del modelo Scrum y la metodología eXtreme Programming. La metodología de ejecución del proyecto tendrá un enfoque basado en métodos ágiles, tomando como referencia técnicas y herramientas del modelo Scrum y de la metodología eXtreme Programming. El desarrollo se lleva a cabo separando el problema en módulos que se corresponden con las funcionalidades del sistema, descriptas a nivel de negocio. Esto resulta conveniente pues permite describir las tareas que debe desempeñar el sistema en términos de lo que el cliente quiere, y deja al equipo de desarrollo la libertad para tomar decisiones sobre como implementar las diferentes funcionalidades. Otra característica de las metodologías ágiles que es de gran importancia en este proyecto es que la calidad de los entregables; esta no se negocia, todo prototipo debe tener la misma calidad que un producto final, completamente funcional. Como el requerimiento de procesamiento en tiempo real es crítico, esta característica hace que la elección de una metodología ágil sea la adecuada.
+La metodología de desarrollo del proyecto será incremental e iterativa. Incremental porque varias componentes del sistema se desarrollarán en momentos diferentes y serán integradas cuando sean completadas. Iterativa pues se invertirán esfuerzos en revisar y mejorar partes del sistema.
 
-Para comenzar la descripción de la metodología elegida es necesario definir algunos conceptos y roles:
+Con esta metodología se puede dividir el trabajo en incrementos que son revisados constantemente a medida que el proyecto se ejecuta. Luego de una investigación preliminar acerca de las tecnologías disponibles, correspondiente a la primera fase de la ejecución del proyecto, se tiene el punto de partida para comenzar el desarrollo. Dado que es necesario cumplir con los requisitos de \textit{tiempo real}, el incremento que corresponde a las funcionalidades básicas del sistema es revisado constantemente para mejorarlo mientras se desarrollan los incrementos de informes y visualización (ver Plan de Tareas). Una vez todos los incrementos son terminados, son integrados para obtener el producto deseado.
+
+\section*{Plan de Tareas}
+
+El proyecto se divide en 4 incrementos. A continuación se da una breve descripción de los mismos:
+
 \begin{itemize}
-\item Dueño de Producto: Es quien se encarga de maximizar la utilización de los recursos para obtener un producto de la mejor calidad posible. El Dueño de Producto (DP) debe concentrarse en los objetivos del proyecto y dejar los aspectos técnicos al equipo de desarrollo. Sus responsabilidades incluyen identificar funcionalidades, traducir estas funcionalidades en una lista de prioridades y actualizar la misma constantemente. En este caso el rol de DP será llevado a cabo por el director del proyecto.
-\item Equipo de Desarrollo: El equipo de desarrollo es el encargado de construir el producto final. Entre sus responsabilidades podemos mencionar la estimación de los \textit{puntos de historia}, asistir a las reuniones de planificación de los \textit{Sprint} y mantener comunicación constante con el DP. En este proyecto el término \textit{equipo de desarrollo} se utiliza para ser consistente con la terminología de las metodologías ágiles, pero el desarrollo será llevado a cabo por una sola persona.
-\item Pila de Producto: Es simplemente una lista requisitos o \textit{historias\footnote{Una historia es la descripción por parte del usuario de un requisito, utilizando el lenguaje común del usuario}} con una importancia asignadas, una estimación de cuanto trabajo es necesario para implementar la historia, y una descripción corta de como debe verificarse en funcionamiento de la funcionalidad. La importancia es un número entero que el DP le asigna a esa historia. La estimación se mide en \textit{puntos de historia} y usualmente se asocia con horas-hombre ideales. Sin embargo, no es importante que la estimación absoluta de la historia sea correcta sino que lo importante es que las estimaciones relativas sean correctas.
+\item Incremento 1: Diseño
+La primer parte del proyecto consiste en determinar que conjunto de tecnologías serán utilizadas, y elaborar una descripción a alto nivel de las diferentes componentes del sistema y cómo se comunican.
+\item Incremento 2: Implementación de captura
+En esta etapa se desarrolla el componente que permite capturar la información de entrada y prepararla para procesos posteriores.
+\item Incremento 3: Filtrado
+Se implementa el módulo que procesa el tráfico de la red y se implementan los filtros.
+\item Incremento 4: Visualización
+En este incremento se integran las funcionalidades del sistema y se agrega la interfaz de usuario.
 \end{itemize}
 
-Al comienzo del proyecto debe elaborarse la Pila de Producto. Luego que el DP asigna la importancia a cada historia se estiman los \textit{puntos de historia}. Tanto la importancia como la estimación de \textit{puntos historia} pueden no ser incluidas en las historias de la Pila de Producto de menor importancia, o en las historias que el DP crea que no serán incluidas en el próximo \textit{Sprint}.
+\subsubsection*{Plan de Tareas}
+\begin{enumerate}
+	\item Diseño (68hs)
+	\begin{enumerate}
+		\item Seleccionar tecnologías (16hs)
+		\item Diseño conceptual del sistema (40hs)
+		\item Documentar diseño (12hs)
+	\end{enumerate}
+	\item Implementación de captura (72hs)
+	\begin{enumerate}
+		\item Instalar plataforma de desarrollo (20hs)
+		\item Implementar funcionalidad básica de captura (40hs)
+		\item Documentar instalación (12hs)
+	\end{enumerate}
+	\item Filtrado y visualización(200hs)
+	\begin{enumerate}
+		\item Implementar filtrado en capa de red (60hs)
+		\item Implementar filtrado en capa de transporte (60hs)
+		\item Diseño de interfaz de usuario (80hs)
+	\end{enumerate}
+	\item Integración (140hs)
+	\begin{enumerate}
+		\item Integración de funcionalidades (60hs)
+		\item Pruebas de integración (40hs)
+		\item Elaboración de informe (40hs)
+	\end{enumerate}
+\end{enumerate}
 
-La ejecución del proyecto se realiza en ventanas de tiempo de duración fija llamadas \textit{Sprints}. Cada \textit{Sprint} tiene un objetivo único descripto en términos de negocio -eso significa en términos en los que la gente fuera del equipo pueda entender- y una descripción básica, en castellano simple, de como ejecutar el escenario de prueba más común para esa historia. Además, cada \textit{Sprint} tiene su Pila de Sprint asociada que es un subconjunto de las historias de la Pila de Producto. Qué historias se agregan en cada Sprint es una tarea que deben desarrollar de manera conjunta el DP y el Equipo de Desarrollo considerando la prioridad de las historias y la velocidad del equipo, esto es, cuantos puntos de historia pueden completarse en el período de tiempo que dura el Sprint. Al final de cada Sprint se debe presentar una demostración de la historia al DP, el cual verifica que la misma sea correcta y esté completa.
-
-\section*{Plan de tareas}
