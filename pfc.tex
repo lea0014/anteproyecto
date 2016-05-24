@@ -3,9 +3,17 @@
 \usepackage[spanish]{babel}
 \usepackage[style=ieee,backend=bibtex]{biblatex}
 \usepackage{graphicx}
+\usepackage{draftwatermark}
+\usepackage{lineno}
 
-\bibliography{JOA_entrega.bib}
+\bibliography{pfc.bib}
 
+\SetWatermarkText{BORRADOR}
+\SetWatermarkScale{5}
+\SetWatermarkLightness{0.95}
+
+
+	
 \begin{document}
 \begin{titlepage}
 	\centering
@@ -14,7 +22,7 @@
 	\vspace{1cm}
 	{\scshape\Large Proyecto Final de Carrera\par}
 	\vspace{1.5cm}
-	{\huge\bfseries Diseño de un sistema para la visualización en tiempo real del tráfico de red en redes informáticas.\par}
+	{\huge\bfseries Diseño de un sistema para la visualización en tiempo real de tráfico en redes informáticas.\par}
 	\vspace{2cm}
 	{\Large\itshape Pineda Leandro\par}
 	\vfill
@@ -25,9 +33,12 @@
 	
 	% Bottom of the page
 	{\large \today\par}
-
+	
 \end{titlepage}
 
+\setpagewiselinenumbers
+\modulolinenumbers[5]
+\linenumbers
 
 \include{justificacion}
 \include{metodologia}
