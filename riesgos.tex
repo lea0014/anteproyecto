@@ -1,0 +1,58 @@
+\section*{Riegos}
+
+Para realizar el análisis cualitativo de los riesgos se asigna una probabilidad de ocurrencia y un impacto a cada riesgo. Luego se priorizan según su \textit{severidad}. Los riesgos identificados son:
+
+\begin{center}
+\begin{tabular}{|l||c|c|c|}
+\hline
+Riesgo & Imp. & \% ocur. & Sev. \\
+\hline
+No se pueden satisfacer las restricciones de performance.  & 5 & 3 & 15 \\
+No se dispone del hardware necesario. & 4 & 3 & 12 \\
+Los módulos del sistema no pueden ser integrados correctamente. & 4 & 2 & 8 \\
+Las tecnologías seleccionadas no pueden ser integradas. & 4 & 2 & 8 \\
+El sistema no puede ser probado en un entorno productivo. & 2 & 2 & 4 \\
+
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Análisis Riesgos}
+Del análisis de la matriz de probabilidad e impacto se deciden las estrategias.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c||c|c|c|c|c|}
+
+	\hline
+	& 1 & 2 & 3 & 4 & 5 \\ \hline
+	\hline
+	1 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} \\ \hline
+	2 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} \\ \hline
+	3 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} \\ \hline
+	4 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} \\ \hline
+	5 & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} \\ \hline
+\end{tabular}
+\qquad \qquad
+\begin{tabular}{|c|l|}
+	\hline Severidad & Estrategia \\ \hline
+	menor que 4 & Aceptar \\ \hline
+	5 a 15 & Mitigar \\ \hline
+	16 a 25 & Evitar \\ \hline
+	
+\end{tabular}
+\end{center}
+
+\section*{Presupuesto}
+
+Duración total del proyecto: 480hs.
+
+\begin{itemize}
+\item Estación de trabajo: \$16000.
+\item Servidor de desarrollo: \$10000.
+\item Conexión a internet: \$3600.
+\item Horas de trabajo (\$40 por hora): \$19200.
+\end{itemize}
+
+Costo total: \$48800.
+

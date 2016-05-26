@@ -23,22 +23,22 @@ Diseñar un sistema que permita mostrar en tiempo real información acerca del t
 \item Identificar un conjunto de tecnologías y herramientas adecuadas para el diseño del sistema.
 \item Construir una herramienta de software que permita visualizar como varía el tráfico de red a través de tiempo.
 \item Diseñar un sistema independiente de un dispositivo de hardware.
-\item Describir la conceptualmente la arquitectura del sistema.
+\item Describir conceptualmente la arquitectura del sistema.
 \end{itemize}
 
 \section*{Alcances}
 
 \subsection*{Funcionales}
 \begin{itemize}
-	\item El sistema proveerá al usuario una interfaz para la visualización de los informes generados.
-	\item El sistema permitirá mostrar distintos tipos de informes en tiempo real según filtros determinados.
+	\item El sistema permitirá mostrar tiempo real el tráfico de red según criterios de filtrado dados.
+	\item El sistema proveerá al usuario una interfaz para la visualización del tráfico de red.
 	\item El sistema ofrecerá estadísticas generales de la red.
 	\item Los informes mostrarán información de la Capa de Transporte y la Capa de Red\footnote{Modelo TCP/IP}.\cite{rfc791}\cite{rfc793}\cite{rfc1180}
 \end{itemize}
 
 \subsection*{No Funcionales}
 \begin{itemize}
-	\item El sistema será escalable. Las tecnologías seleccionadas permiten agregar nodos de procesamiento en caso de necesitar procesar grandes volúmenes de tráfico de red.
+	\item El sistema será escalable. Las tecnologías seleccionadas permiten configurar un cluster de nodos de procesamiento en caso que el volumen de datos a procesar aumente.
 	\item Se proveerá un manual de instalación y configuración.
 \end{itemize}
 
