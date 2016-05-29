@@ -8,11 +8,14 @@
 \usepackage[table]{xcolor}
 
 
-\bibliography{pfc.bib}
+\bibliography{pfc}
 
 \SetWatermarkText{BORRADOR}
 \SetWatermarkScale{5}
 \SetWatermarkLightness{0.95}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 
 
 	
@@ -43,7 +46,7 @@
 
 \include{justificacion}
 \include{metodologia}
-\include{riesgos}
+%\include{riesgos}
 \newpage
 
 \nocite{*}
