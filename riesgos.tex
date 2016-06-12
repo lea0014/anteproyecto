@@ -1,4 +1,4 @@
-\section*{Riegos}
+\section*{Riesgos}
 
 En esta sección se enumeran los riesgos identificados, indicadores y estrategia a adoptar según corresponda. Para realizar el análisis cualitativo de los riesgos se asigna una probabilidad de ocurrencia y un impacto a cada riesgo. Luego se priorizan según su \textit{severidad}. Los riesgos identificados son:
 
@@ -35,49 +35,52 @@ Se revisan continuamente los entregables de la etapa de Integración con el fin 
 \textbf{Estrategia a adoptar:} Mitigar (impacto). \\
 Se realiza un estudio comparativo de varias tecnologías para disponer de alternativas a las determinadas inicialmente.
 
-\item \textbf{El sistema no puede ser probado en un entorno productivo:} la implementación del sistema en un entorno productivo implica un riesgo para los administradores de las redes. Por esto, es posible que no se disponga de un escenario real para las pruebas finales de integración.
+\item \textbf{El progreso del proyecto no es monitoreado adecuadamente:} es necesario elaborar una cierta cantidad de informes de avance. Puede ocurrir que debido a un monitoreo pobre del avance del proyecto estos documentos estén incompletos para la fecha de entrega.
 
-\textbf{Probabilidad de ocurrencia:} Baja. \\
+\textbf{Probabilidad de ocurrencia:} Media. \\
 \textbf{Impacto:} Bajo. \\
-\textbf{Estrategia a adoptar:} Aceptar (activamente). \\
-Se generarán los datos necesarios para realizar pruebas de integración.
+\textbf{Estrategia a adoptar:} Mitigar (ocurrencia). \\
+Los cambios y avances realizados serán registrados mediante un sistema de control de versiones, agregando una breve descripción del trabajo realizado. Estas descripciones serán luego utilizadas para la elaboración de los informes de avance.
 
 \end{enumerate}
 
-\begin{center}
+\begin{table}
+	\centering
+	\setlength\tabcolsep{4pt}
+	\begin{minipage}{0.4\textwidth}
+		\begin{centering}
+			\begin{tabular}{|c||c|c|c|c|c|}
+				\hline
+				& 1 & 2 & 3 & 4 & 5 \\ \hline
+				\hline
+				1 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} \\ \hline
+				2 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} \\ \hline
+				3 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} \\ \hline
+				4 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} \\ \hline
+				5 & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} \\ \hline
+			\end{tabular}
+			\captionof{table}{Probabilidad/impacto.}	
+		\end{centering}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		\begin{centering}
+			\begin{tabular}{|c|l|}
+				\hline Severidad & Estrategia \\ \hline
+				menor que 4 & Aceptar \\ \hline
+				5 a 15 & Mitigar \\ \hline
+				16 a 25 & Evitar \\ \hline
+			\end{tabular}
+			\captionof{table}{Estrategia según severidad.}
+		\end{centering}
+	\end{minipage}
+\end{table}
 
-\end{center}
-
+\newpage
 \subsection*{Análisis Riesgos}
-En esta sección se muestra el análisis realizado de los riesgos del proyecto, luego se definen las estrategias a adoptar y los riesgos ordenados por importancia según su severidad.
-
-\begin{center}
-\vspace{15px}
-\begin{tabular}{|c||c|c|c|c|c|}
-	\hline
-	& 1 & 2 & 3 & 4 & 5 \\ \hline
-	\hline
-	1 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} \\ \hline
-	2 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} \\ \hline
-	3 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} \\ \hline
-	4 & \cellcolor[gray]{0.8} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} \\ \hline
-	5 & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.6} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} & \cellcolor[gray]{0.4} \\ \hline
-\end{tabular}
-\captionof{table}{Matriz probabilidad/impacto.}
-
-\vspace{15px}
-
-\begin{tabular}{|c|l|}
-	\hline Severidad & Estrategia \\ \hline
-	menor que 4 & Aceptar \\ \hline
-	5 a 15 & Mitigar \\ \hline
-	16 a 25 & Evitar \\ \hline
-\end{tabular}
-\captionof{table}{Estrategia a adoptar según severidad.}
-
-\vspace{15px}
+En esta sección se muestra el análisis realizado de los riesgos del proyecto, luego se definen las estrategias a adoptar y los riesgos ordenados por importancia según su severidad. \\
 
 \begin{tabular}{|l||c|c|c|}
+
 	\hline
 	Riesgo & Imp. & \% ocur. & Sev. \\
 	\hline
@@ -85,39 +88,46 @@ En esta sección se muestra el análisis realizado de los riesgos del proyecto, 
 	No se dispone del hardware necesario. & 4 & 3 & 12 \\
 	Los módulos del sistema no pueden ser integrados correctamente. & 5 & 2 & 10 \\
 	Las tecnologías seleccionadas no pueden ser integradas. & 4 & 2 & 8 \\
-	El sistema no puede ser probado en un entorno productivo. & 2 & 2 & 4 \\
+	El progreso del proyecto no es monitoreado adecuadamente. & 2 & 3 & 6 \\
 	\hline
+	
 \end{tabular}
 \captionof{table}{Lista de riesgos ordenados por severidad.}
 
-\end{center}
-
-\newpage
 
 \section*{Presupuesto}
 
-A continuación se detalla el presupuesto necesario para el desarrollo del proyecto. El valor de la infraestructura de hardware necesaria es aproximado y comprende una estación de trabajo para el desarrollo del sistema y un servidor dedicado con 3 interfaces de red. Las especificaciones técnicas se determinarán en la etapa de Diseño del proyecto.
+A continuación se detalla el presupuesto necesario para el desarrollo del proyecto. El servidor de desarrollo cuenta con hardware de red específico y será utilizado para ejecutar las pruebas del sistema.
 
-\vspace{12px}
 
-\begin{centering}
+\begin{center}
 
-\begin{tabular}{l c c r}
-\textbf{Infraestructura} & & & \\
-Estación de trabajo & & & \$16000. \\
-Servidor de desarrollo & & & \$10000. \\
-\hline
-\textbf{Servicios} & & &\\
-Conexión a internet & & & \$4000 \\
-\hline
-\textbf{Recursos humanos} & \textbf{Costo por hora} & \textbf{Horas} \\
-Diseñador & \$40 & 84 & \$3360 \\
-Desarrollador & \$40 & 364 & \$14560 \\
-Tester & \$40 & 40 & \$1600 \\
-\hline
-\textbf{Costo total} & & & \$\textbf{49520}.
-\end{tabular}
-\end{centering}
+	\begin{tabular}{l c c r}
+		\hline \hline
+		
+		\textbf{Infraestructura} & & & \\ \hline
+		Estación de trabajo (costo de amortización)& & & \$2691. \\
+		\textit{Procesador AMD FX6} & & &\\
+		\textit{Memoria 16GB DDR3} & & & \\
+		\textit{Monitores (configuración dual)} & & & \\
+		\hline
+		Servidor de desarrollo & & & \$18000. \\
+		\textit{Procesador Intel i5 o similar} & & & \\
+		\textit{Memoria 16GB DDR3} & & & \\
+		\textit{Interfaz de red para servidor (2 puertos)} & & & \\
+		\hline \hline
+		
+		\textbf{Servicios} & & &\\ \hline
+		Servicio de Internet & & & \$4000 \\
+		\hline \hline
+		\textbf{Recursos humanos} & \textbf{Costo por hora} & \textbf{Horas} \\
+		Diseñador & \$110 & 84 & \$9420 \\
+		Desarrollador & \$100 & 364 & \$36400 \\
+		Tester & \$85 & 40 & \$3400 \\
+		\hline \hline
+		\textbf{Costo total} & & & \$\textbf{73911}.
+	\end{tabular}
+\end{center}
 
 
 
