@@ -1,16 +1,13 @@
 \section*{Justificación}
-Las redes informáticas son esenciales para las operaciones diarias de cualquier empresa o institución pública. A medida que estas entidades crecen, también crece el volumen de datos que generan, demandando así una infraestructura de red de mayor porte. Debido a esto, mantener una buena performance en el funcionamiento general de un sistema que se encuentra constantemente en crecimiento se convierte en una tarea desafiante.
+Las redes informáticas son esenciales para que las empresas o institución pública puedan realizar sus tareas diarias. A medida que estas entidades crecen también lo hace el volumen de datos que generan, demandando así una infraestructura de red con mayor tamaño. Debido a esto, mantener una buena performance en el funcionamiento general de un sistema que se encuentra constantemente en crecimiento se convierte en una tarea desafiante.
 
 Algunas de las herramientas disponibles para monitoreo de redes brindan reportes basados en estadísticas. La empresa Cisco\textsuperscript{\textregistered} introduce una característica en algunos modelos de routers y switches llamada NetFlow, la cual permite recolectar información sobre el tráfico de red que atraviesa las distintas interfaces del dispositivo. Sin embargo, estar limitado exclusivamente a modelos particulares de routers y switches significa una desventaja pues en algunas ocasiones no se dispone del hardware mencionado, lo que implica una inversión en infraestructura considerable. Otros fabricantes introducen características similares a NetFlow, pero con nombres diferentes: Traffic Flow de MikroTik, NetStream de HP, entre otros.
 Otra alternativa para monitorear el tráfico que pasa a través de una interfaz de red es el analizador de paquetes \textit{tcpdump} (disponible en sistemas GNU/Linux), el cual permite observar una descripción en texto plano del contenido de los paquetes que atraviesan la interfaz.
 
-Una metodología diferente de monitoreo de red se relaciona con el BigData y consiste en almacenar todos los eventos que ocurren en la red para luego generar informes utilizando procesos \textit{batch} sobre el conjunto de datos. Esto no solo es un proceso lento sino que requiere almacenar grandes volúmenes de datos, y si bien brinda información que es de gran utilidad para la toma de decisiones, es sobre eventos que ocurrieron en el pasado.
+Disponer de la información más actualizada posible de los eventos que han ocurrido en la red facilita la tarea de administrar redes informáticas. Es por esto que el monitoreo en tiempo real es un herramienta de gran utilidad pues permite contar con información importante, al instante. El proceso de toma de decisiones a la hora de invertir en infraestructura puede realizarse de forma adecuada si se incluye la información que puede extraerse observando la utilización de la infraestructura actual. Por ejemplo, una empresa podría decidir si invertir en una conexión a Internet de mayor velocidad o limitar el ancho de banda disponible para ciertos servicios que hacen uso intensivo de las redes. El monitoreo y la visualización en tiempo real puede hacer también que el proceso de detección de problemas en una red sea rápido y sencillo.
 
-La tarea de administrar redes informáticas se ve facilitada si podemos contar con la información más actualizada posible sobre la evolución del tráfico de red. Es por esto que el monitoreo en tiempo real es un herramienta de gran utilidad pues permite contar con información importante, al instante. El proceso de toma de decisiones a la hora de invertir en infraestructura puede realizarse de forma adecuada si se incluye la información que puede extraerse observando la utilización de la infraestructura actual. Por ejemplo, una empresa podría decidir si invertir en una conexión a Internet de mayor velocidad o limitar el ancho de banda disponible para ciertos servicios que hacen uso intensivo de las redes. El monitoreo y la visualización en tiempo real puede hacer también que el proceso de detección de problemas en una red sea rápido y sencillo.
-
-Se propone entonces diseñar un sistema capaz de mostrar información acerca del tráfico que está atravesando una interfaz de red utilizando el sistema de procesamiento en tiempo real Apache Storm y las tecnologías asociadas al mismo\footnote{Apache Storm puede integrarse con otros frameworks como Apache Zookeeper, Apache Kafka, Kestrel, y una gran variedad de motores de base de datos}. Analizando la salida de texto plano de el analizador \textit{tcpdump} el sistema producirá en tiempo real informes acerca de los parámetros relevantes del tráfico de red, y mostrará informes gráficos según diferentes filtros como tráfico entrante y saliente, consumo de ancho de banda por protocolo, IP o puerto entre otros.
-
-La empresa Twitter utiliza Storm para procesar grandes volúmenes de \textit{tweets} y determinar \textit{trends\footnote{Trend refiere a un tópico identificado por \textit{HashTags} que resulta sumamente popular en un momento dado.}}. El uso de esta tecnología hace que el sistema sea escalable y pueda adaptarse a redes que están en crecimiento constante. Otras compañías que hacen uso de Storm para proveer servicios son Yahoo!, Spotify, Yelp y Groupon por mencionar algunas importante.
+Se propone entonces diseñar un sistema capaz de registrar los eventos TCP ocurridos y mostrar información acerca del tráfico de red que está siendo transmitido por una red. El mismo utilizará técnicas llamadas \textit{Real-Time Stream Processing} para analizar la salida de texto plano del analizador de paquetes \textit{tcpdump} y producir en tiempo real informes acerca de los parámetros de performance más importantes\footnote{IP Performance Metrics Working Group https://datatracker.ietf.org/wg/ippm/documents/ (IPPM)}
+. El uso de estas técnicas permite diseñar un sistema escalable el cual pueda adaptarse a redes que están en crecimiento constante.
 
 Sin duda alguna, la cantidad de dispositivos conectados a Internet crece día a día y con ellos lo hace la demanda de la infraestructura de red necesaria para brindar un servicio de calidad. Contar con información del uso de las redes es fundamental para hacer estimaciones para inversiones a futuro, y permite determinar si los recursos disponibles están siendo utilizados de manera eficiente.
 
@@ -18,34 +15,37 @@ Finalmente, contar con esta información es una gran ayuda para mejorar la segur
 
 \section*{Objetivos}
 \subsection*{Generales}
-Diseñar un sistema que permita visualizar en tiempo real información acerca del tráfico de red que atraviesa una interfaz de red.
+Diseñar un sistema que permita monitorear en tiempo real parámetros de performance del tráfico que atraviesa una interfaz de red.
 \subsection*{Específicos}
 \begin{itemize}
-\item Elaborar un documento que describa la arquitectura del sistema.
-\item Identificar un conjunto de tecnologías y herramientas adecuadas para el diseño del sistema.
-\item Diseñar un sistema de monitoreo de redes que sea independiente de un dispositivo de infraestructura de red.
-\item Construir una herramienta de software que permita visualizar cómo varía el tráfico de red a través del tiempo.
 
+\item Identificar un conjunto de tecnologías y herramientas adecuadas para el diseño del sistema.
+\item Diseñar un sistema de monitoreo de redes que funcione en \textit{commodity hardware}.
+\item Construir una herramienta de software que permita visualizar cómo varían los parámetros de performance de la red (ver Alcances).
+\item Elaborar un documento que describa la arquitectura del sistema.
 \end{itemize}
 
 \section*{Alcances}
 
 \subsection*{Funcionales}
 \begin{itemize}
-	\item El sistema permitirá visualizar en tiempo real información acerca de los paquetes que atraviesan una interfaz de red. 
-	\item El sistema proveerá al usuario una interfaz para la visualización de los informes.
+	\item El sistema permitirá visualizar en tiempo real los parámetros de performance de la red. Se podrá monitorear el tráfico a nivel de \textit{host} (capa de red) y a nivel de servicios (capa de transporte)
+	\item Los informes mostrarán información de la Capa de Transporte y la Capa de Red\footnote{Modelo TCP/IP}. \cite{rfc791}\cite{rfc793}\cite{rfc1180}
+	\item El sistema proveerá al usuario una interfaz para la visualización de los informes. Estos contaran con los siguientes parámetros:
+	\begin{itemize}
+		\item Utilización de la red
+		\item Paquetes por segundo transmitidos
+		\item Cantidad de peticiones de conexión
+		\item Cantidad de conexiones realizadas
+		\item Cantidad de conexiones rechazadas y expiradas
+		\item Cantidad de conexiones activas
+		\item Tráfico entrante y saliente por host
+		\item Tráfico entrante y saliente por proceso
+	\end{itemize}
 	\item El sistema ofrecerá estadísticas generales de uso de la red.
-	\item Los informes mostrarán información de la Capa de Transporte y la Capa de Red\footnote{Modelo TCP/IP}.\cite{rfc791}\cite{rfc793}\cite{rfc1180}
+	\item El sistema almacenará información de las conexiones establecidas y terminadas que ocurrieron en la red.
+	\item El sistema no identificará patrones o generará alarmas.
 \end{itemize}
-
-La información que podrá ser visualizada esta basada en el filtrado del flujo de paquetes que atraviesa la interfaz de red. Los filtros son:
-\begin{itemize}
-\setlength{\itemsep}{0pt}
-	\item Ancho de banda utilizado por protocolo.
-	\item Ancho de banda utilizado por conexión TCP\cite{rfc793}.
-	\item Ancho de banda utilizado por un host  (protocolo IP\cite{rfc1180}).
-	\item Filtrado por banderas de control.\footnote{\textit{Flags} o \textit{Control bits}. Ver \cite{rfc793}.}
-\end{itemize} 
 
 \subsection*{No Funcionales}
 \begin{itemize}
