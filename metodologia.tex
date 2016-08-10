@@ -13,7 +13,7 @@ El proyecto se divide en 4 incrementos. A continuación se da una breve descripc
 \paragraph{Incremento 1: Diseño}\
 La primer parte del proyecto consiste en determinar que conjunto de tecnologías serán utilizadas, y elaborar una descripción a alto nivel de las diferentes componentes del sistema y cómo se relacionan.
 \paragraph{Incremento 2: \textit{Core} o Núcleo} \
-En esta etapa se implementa la funcionalidad que permite capturar la información de entrada, visualizarla en texto plano y prepararla para procesamientos posteriores.
+En esta etapa se implementa la funcionalidad que permite capturar la información de entrada, visualizarla en texto plano y prepararla para procesamientos posteriores. También se implementa la funcionalidades de registro de eventos en la capa de transporte.
 \paragraph{Incremento 3: Filtrado} \
 Se implementa el módulo que procesa el tráfico de la red y se implementan las funcionalidades de filtrado junto con los filtros predeterminados.
 \paragraph{Incremento 4: Visualización} \
@@ -29,10 +29,10 @@ Al finalizar la primera iteración de cada incremento se obtiene una herramienta
 		\begin{tabular}{|l|c|}
 			\hline 
 			Entregable & Fecha de entrega \\ \hline
-			Informe de avance 1 & 09/09/2016 \\
-			Informe de avance 2 & 07/10/2016 \\
-			Informe de avance 3 & 09/12/2016 \\
-			Informe de avance 4 & 10/02/2017 \\ \hline
+			Informe de avance 1 & 16/09/2016 \\
+			Informe de avance 2 & 04/11/2016 \\
+			Informe de avance 3 & 10/02/2016 \\
+			Informe de avance 4 & 17/03/2017 \\ \hline
 		\end{tabular}
 	\end{center}
 	\caption{Fechas de entrega de informes de avance.}
@@ -41,7 +41,7 @@ Al finalizar la primera iteración de cada incremento se obtiene una herramienta
 
 \subsubsection*{Plan de Tareas}
 
-La duración total del proyecto es de $488$ horas, con una dedicación de $20$ horas semanales. A continuación se define el plan de tareas.
+La duración total del proyecto es de $520$ horas, con una dedicación de $20$ horas semanales. A continuación se define el plan de tareas.
 
 \begin{enumerate}
 	\item \textbf{Diseño} (84hs)
@@ -50,16 +50,25 @@ La duración total del proyecto es de $488$ horas, con una dedicación de $20$ h
 		\item Diseño conceptual del sistema. (40hs)
 		\item Diseño de interfaz de usuario y filtros predeterminados. (20hs)
 	\end{enumerate}
-	\item \textbf{\textit{Core} o Núcleo} (96hs)
+	\item \textbf{\textit{Core} o Núcleo} (120hs)
 	\begin{enumerate}
 		\item Instalación y configuración de servidor de aplicación. (32hs)
 		\item Implementación de funcionalidad de captura de tráfico de red. (52hs)
+		\item Implementación de funcionalidad de registro de eventos. (24hs)
 		\item Documento de instalación. (12hs)
 	\end{enumerate}
-	\item \textbf{Filtrado y visualización} (168hs)
+	\item \textbf{Filtrado y visualización} (176hs)
 	\begin{enumerate}
 		\item Implementación de funcionalidad de filtrado en capa de red. (52hs)
-		\item Implementación de funcionalidad de filtrado en capa de transporte. (52hs)
+		\begin{enumerate}
+			\item Módulo de filtrado por host. (20hs)
+			\item Módulo de obtención de métricas. (32hs)
+		\end{enumerate}
+		\item Implementación de funcionalidad de filtrado en capa de transporte. (60hs)
+		\begin{enumerate}
+			\item Módulo de filtrado por servicio. (20hs)
+			\item Módulo de obtención de métricas. (40hs)
+		\end{enumerate}
 		\item Implementación de filtros predeterminados. (24hs)
 		\item Implementación de interfaz de usuario. (40hs)
 	\end{enumerate}
@@ -73,13 +82,13 @@ La duración total del proyecto es de $488$ horas, con una dedicación de $20$ h
 
 \begin{table}[bp]
 	\begin{center}	
-		\begin{tabular}{|l|c|c|}
+		\begin{tabular}{|l|c|c|c|}
 			\hline 
-			Etapa & Inicio & Finalización \\ \hline
-			Diseño & 15/08/2016 & 16/09/2016 \\
-			\textit{Core} o Núcleo & 19/09/2016 & 21/10/2016 \\
-			Filtrado y visualización & 24/10/2016 & 16/12/2016 \\
-			Integración & 09/01/2017 & 24/02/2017 \\ \hline
+			Etapa & Inicio & Finalización & Duración \\ \hline
+			Diseño & 15/08/2016 & 23/09/2016 & 5 semanas \\
+			\textit{Core} o Núcleo & 26/09/2016 & 11/11/2016 & 6 semanas \\
+			Filtrado y visualización & 14/11/2016 & 03/02/2017 & 11 semanas \\
+			Integración & 06/02/2017 & 31/03/2017 & 7 semanas \\ \hline
 		\end{tabular}
 	\end{center}
 	\caption{Fechas estimativas de inicio y fin de actividades.}
