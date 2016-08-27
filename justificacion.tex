@@ -1,56 +1,48 @@
 \section*{Justificación}
-La cantidad de servicios que ofrecen organismos públicos y privados a través de Internet aumenta constantemente, y en consecuencia también lo hace la complejidad de los sistemas necesarios para proveerlos. \par
-La integridad de estos sistemas puede verse comprometida fundamentalmente por dos factores: las fallas de los componentes de la infraestructura de red\cite{Gill:2011:UNF:2043164.2018477} que afectan una parte o la totalidad de las funcionalidades del sistema, y los servicios ofrecidos a usuarios externos que pueden ser objeto de numerosos tipos de ataques\cite{Karumanchi:2014:WLS:2554850.2555010}\cite{mutchler15:mobilewebapps}. Hacer frente a estos últimos es de extrema importancia dado que su fin puede ser no solo afectar la calidad de los servicios ofrecidos, sino que también pueden comprometer información sensible de la organización o de los usuarios. Además de ataques externos, los sistemas pueden ser vulnerados por usuarios malintensionados con acceso físico a la red interna de la organización, o por actores inadvertidos\cite{Kraemer2007143}\cite{Kraemer2009509}\cite{Liginlal2009215}\cite{Ahmed12humanerrors}. \par
-El conjunto de herramientas clásicas para implementar políticas de seguridad como firewall, lista de control de acceso, credenciales de usuario, proxy de red entre otros, resultaba adecuado 10 años atras, pero en la actualidad estas herramientas están siendo cada vez menos efectivas en la tarea de bloquear ataques dirigidos y malware avanzados. Esto hace que cada vez sea más común la utilización de otras herramientas que monitorean continuamente eventos en busca de patrones que puedan indicar comportamientos anómalos provocados por ataques o por fallas en los dispositivos de red. Los sistemas de detección/prevención de intrusiones (IDS o IPS por las siglas en inglés \textit{Intrusion Detection/Prevention System}) pueden realizar esta tarea utilizando una de estas técnicas de detección: detección de uso indebido y detección de anomalías\cite{Milenkoski:2015:ECI:2808687.2808691}. En el primer caso, el sistema determina la ocurrencia de ataques comparando la actividad de la red y de los subsistemas que la componen contra un conjunto de patrones de ataques conocidos. En el segundo caso, el sistema utiliza un modelo de comportamiento normal para evaluar la actividad de la red en busca de anomalías, las cuales pueden ser producto de fallas o potenciales ataques. Como alternativa a las soluciones de hardware dedicado o sistemas privativos que ofrecen algunas empresas, la comunidad de software libre desarrolla y mantiene la aplicación Snort\footnote{https://www.snort.org/}, que es un IDS basado en detección de uso indebido. Si bien esta herramienta es efectiva detectando ataques conocidos, es dependiente de la definición de un conjunto efectivo de reglas por parte del administrador (las cuales son difíciles de mantener) y de una base de datos actualizada con los patrones conocidos de ataques o \textit{malware}. Otra desventaja de esta técnica de detección es la imposibilidad de detectar ataques \textit{zero-day\footnote{ataques que expĺotan vulnerabilidades que aún no han sido conocidas o que no están contempladas en al conjunto definido de reglas}}\cite{Milenkoski:2015:ECI:2808687.2808691}. Otra herramienta que suele utilizarse en conjunto con Snort es Bro\footnote{https://www.bro.org/}, que es una plataforma para análisis de tráfico de red. Sin embargo, Bro también se basa en la definición de reglas de monitoreo y utiliza detección de uso indebido. \par
+La cantidad de servicios que organismos públicos y privados ofrecen a través de Internet aumenta constantemente, y en consecuencia también lo hace la complejidad de los sistemas necesarios para proveerlos. \par
+La integridad de estos sistemas puede verse comprometida principalmente por dos factores: las fallas de los componentes de la infraestructura de red\cite{Gill:2011:UNF:2043164.2018477}, que afectan a una parte o a la totalidad de las funcionalidades del sistema, y los numerosos tipos de ataques\cite{Karumanchi:2014:WLS:2554850.2555010}\cite{mutchler15:mobilewebapps} a los servicios públicos ofrecidos a los usuarios. Hacer frente a estos últimos es de extrema importancia dado que su fin puede ser no solo afectar la calidad de los servicios ofrecidos, sino que también pueden comprometer información sensible de la organización. Además de ataques externos, los sistemas pueden ser vulnerados por usuarios malintensionados con acceso físico a la red interna de la organización, o por actores inadvertidos\cite{Kraemer2007143}\cite{Kraemer2009509}\cite{Liginlal2009215}\cite{Ahmed12humanerrors}. \par
+Utilizar únicamente el conjunto de herramientas clásicas para implementar políticas de seguridad como firewall, lista de control de acceso, credenciales de usuario, proxy de red entre otros, resultaba adecuado 10 años atras, pero en la actualidad estas herramientas están siendo cada vez menos efectivas en la tarea de bloquear ataques dirigidos y malware avanzados. Esto hace que cada vez sea más común la utilización de otras herramientas que monitorean continuamente eventos en busca de patrones que puedan indicar comportamientos anómalos en el tráfico de red, provocados tanto por ataques como por fallas en los dispositivos de red. Los sistemas de detección/prevención de intrusiones (IDS o IPS por las siglas en inglés \textit{Intrusion Detection/Prevention System}) pueden realizar esta tarea utilizando alguna de estas técnicas de detección: detección de uso indebido o \textit{signature-based detection} y detección de anomalías o \textit{anomaly-based detection}\cite{Milenkoski:2015:ECI:2808687.2808691}. En el primer caso, el sistema determina la ocurrencia de ataques comparando la actividad de la red y de los subsistemas que la componen, contra un conjunto de patrones de ataques conocidos. Si los patrones coinciden, el ataque es informado y pueden tomarse medidas al respecto. En el segundo caso, se modela el comportamiento normal de la red y se usa como base para buscar comportamientos anómalos, los cuales pueden ser producto de fallas o de potenciales ataques. \par
+Como alternativa a las soluciones de hardware dedicado o sistemas privativos que ofrecen algunas empresas, la comunidad de software libre desarrolla y mantiene la aplicación Snort\footnote{https://www.snort.org/}, que es un IDS basado en detección de uso indebido. Si bien esta herramienta es efectiva detectando ataques conocidos, es dependiente de la definición de un conjunto efectivo de reglas por parte del administrador (las cuales son difíciles de mantener) y de una base de datos actualizada con los patrones de ataques o \textit{malware}. Otra desventaja de esta técnica de detección es la imposibilidad de detectar ataques \textit{zero-day\footnote{ataques que expĺotan vulnerabilidades que aún no han sido conocidas o que no están contempladas en al conjunto definido de reglas}}\cite{Milenkoski:2015:ECI:2808687.2808691}. Otra herramienta que suele utilizarse en conjunto con Snort es Bro\footnote{https://www.bro.org/}, que es una plataforma para análisis de tráfico de red. Sin embargo, Bro también se basa en la definición de reglas de monitoreo y utiliza detección de uso indebido. \par
 
-Con el fin de disponer de otra herramienta para la identificación de comportamientos sospechosos, el objetivo de este proyecto es el de diseñar un software que modele de forma automática el comportamiento normal de la red utilizando las técnicas del estado del arte, para identificar y alertar comportamiento anómalo en la red de datos de una organización. Así, el modelo de comportamiento normal es calculado automaticamente por el software, brindando la posibilidad de detectar efectivamente cualquier cambio poco usual en los sistemas. Para esto, se hará uso de la información provista por los dispositivos de infraestructura de red como routers y logs de servidores y de los subsistemas que interactuan dentro de la red.
-\newpage
+Con el fin de disponer de otra herramienta para la identificación de comportamientos sospechosos que complemente las funcionalidades de las que se utilizan en la actualidad, el objetivo de este proyecto es el de diseñar un software que modele de forma automática el comportamiento normal de la red utilizando las técnicas del estado del arte, para identificar y alertar comportamiento anómalo en la infraestructura de red de datos de la Secretaría de Tecnologías para la Gestión de la ciudad de Santa Fe. El modelo de comportamiento normal es calculado automaticamente por el software, brindando la posibilidad de detectar efectivamente cualquier evento poco usual en los sistemas. Para esto, se hará uso de la información generada por los dispositivos de infraestructura de red como routers y los logs de servidores y de los subsistemas que interactuan dentro de la red.
 
 \section*{Objetivos}
 \subsection*{Generales}
-Diseñar un sistema que permita monitorear en tiempo real parámetros de performance del tráfico que atraviesa una interfaz de red.
+Diseñar un sistema de detección de intrusiones basado en técnicas de detección de anomalías.
 \subsection*{Específicos}
 \begin{itemize}
 
 \item Identificar un conjunto de tecnologías y herramientas adecuadas para el diseño del sistema.
-\item Diseñar un sistema de monitoreo de redes que funcione en \textit{commodity hardware}.
-\item Construir una herramienta de software que registre los eventos ocurridos en la red (capa de transporte).
+\item Determinar las técnicas de modelado de tráfico de red necesarias.
+\item Implementar un software que modele el tráfico normal de red de forma automática, utilizando técnicas no supervisadas.
+\item Implementar un software que genere alertas ante la ocurrencia de eventos anómalos.
+\item Diseñar un sistema que evite clasificar falsos negativos. Este objetivo es de particular importancia dado que un evento anómalo clasificado como falso negativo es un evento potencialmente dañino considerado como normal.
 \item Elaborar un documento que describa la arquitectura del sistema.
 \end{itemize}
 
 \section*{Alcances}
 
-\subsection*{Funcionales}
+\subsubsection*{Funcionales}
 \begin{itemize}
-	\item El sistema permitirá visualizar en tiempo real los parámetros de performance de la red. Se podrá monitorear el tráfico a nivel de \textit{host} (capa de red) y a nivel de servicios (capa de transporte)
-	\item Los informes mostrarán información de la Capa de Transporte y la Capa de Red\footnote{Modelo TCP/IP}. \cite{rfc791}\cite{rfc793}\cite{rfc1180}
-	\item El sistema proveerá al usuario una interfaz para la visualización de los informes. Estos contaran con los siguientes parámetros:
-	\begin{itemize}
-		\item Utilización de la red
-		\item Paquetes por segundo transmitidos
-		\item Cantidad de peticiones de conexión
-		\item Cantidad de conexiones realizadas
-		\item Cantidad de conexiones rechazadas y expiradas
-		\item Cantidad de conexiones activas
-		\item Tráfico entrante y saliente por host
-		\item Tráfico entrante y saliente por proceso
-	\end{itemize}
-	\item El sistema almacenará información de las conexiones establecidas. Lo hará en archivos de texto plano y en formato semi-estructurado.
-	\item El sistema no identificará patrones o generará alarmas.
+	\item El sistema utilizará información de capa de red\cite{rfc791} y capa de transporte\cite{rfc793}\cite{rfc1180}, e información proveniente de logs de servidores web y gestores de bases de datos.
+	\item Los datos serán procesados utilizando técnicas de \textit{Streaming}\cite{Fischer:2012:RVA:2245276.2245432}
+	\item El sistema identificará posibles comportamientos anómalos y generará las alarmas correspondientes.
+	\item Con cada alarma, el sistema mostrará que probabilidad existe de que el evento sea un falso positivo. 
+	\item El sistema proveerá al usuario una interfaz web para la visualización de los eventos y las alarmas.
+	\item El sistema almacenará información de eventos ocurridos en archivos de texto plano y en formato semi-estructurado.
+	\item El sistema no utilizará técnicas de detección \textit{signature-based}.
 \end{itemize}
 
-\subsection*{No Funcionales}
+\subsubsection*{No Funcionales}
 \begin{itemize}
-	\item El sistema será escalable. Las tecnologías seleccionadas permiten configurar un cluster de nodos de procesamiento en caso que el volumen de datos a procesar aumente.
 	\item Se proveerá un manual de instalación y configuración.
 \end{itemize}
  
-\subsubsection{Exclusiones}
-El proyecto no contempla la instalación del sistema en un ámbito de producción. El sistema a desarrollar solo analizará el tráfico que atraviesa una única interfaz de red, y no contempla el caso de conexiones múltiples con balance de carga, ni la utilización de múltiples nodos configurados en modo cluster. No se implementará ningún mecanismo de detección ataques o de patrones de comportamiento sospechoso.
+\subsection*{Exclusiones}
+El proyecto no contempla la instalación del sistema en un ámbito de producción.
 
-\subsubsection{Supuestos}
-Los datos necesarios para realizar pruebas pueden ser generados arbitrariamente.
-El término \textit{tiempo real} refiere al denominado \textit{tiempo real blando}, es decir, no es necesario asegurar la ejecución de ciertas tareas o mostrar informes en el mismo instante en el que se generan los datos. La generación de los informes tendrá entonces demoras de cientos de milisegundos.
+\subsection*{Supuestos}
+Los datos necesarios para realizar pruebas pueden ser generados arbitrariamente. Además, se utilizarán datos provistos por el Centro de Cómputos de la Provincia de Santa Fe.
 
-\subsubsection{Criterios de Aceptación}
+\subsection*{Criterios de Aceptación}
 Se considera que el proyecto está aceptado cuando cumple en un 90\% los requisitos funcionales, con un nivel mínimo de aceptación del 75\%. Los prototipos deben tener implementadas todas las funcionalidades planificadas.
