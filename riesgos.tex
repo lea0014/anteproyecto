@@ -3,46 +3,48 @@
 En esta sección se enumeran los riesgos identificados, indicadores y estrategia a adoptar según corresponda. Para realizar el análisis cualitativo de los riesgos se asigna una probabilidad de ocurrencia y un impacto a cada riesgo. Luego se priorizan según su \textit{severidad}. Los riesgos identificados son:
 
 \begin{enumerate}
-\item \textbf{No se pueden satisfacer las restricciones de performance:} la característica principal del sistema es la posibilidad de procesar tráfico en tiempo real. Puede darse un escenario donde las tecnologías disponibles no permitan alcanzar este requisito.
-
-\textbf{Indicador:} se observan demoras o un progreso lento en las etapas de Núcleo y/o Integración. \\
-\textbf{Probabilidad de ocurrencia:} Media. \\
-\textbf{Impacto:} Muy alto. \\
-\textbf{Estrategia a adoptar:} Mitigar (probabilidad).
-Se revisan continuamente los entregables de la etapa de Diseño con el fin de mejorar su calidad.
-
 \item \textbf{No se dispone del hardware necesario:} el servidor de aplicaciones necesario para el desarrollo de la aplicación no se encuentra disponible
 
-\textbf{Indicador:} la etapa de Núcleo no puede comenzar. \\
-\textbf{Probabilidad de ocurrencia:} Media. \\
+\textbf{Indicador:} no se puede comenzar con el segundo incremento. \\
+\textbf{Probabilidad de ocurrencia:} Baja. \\
 \textbf{Impacto:} Alto. \\
 \textbf{Estrategia a adoptar:} Mitigar (impacto).
-Se utilizará la infraestructura provista por la facultad.
+Se utilizarán tecnologías de virtualización para virtualizar el servidor.
 
-\item \textbf{Los módulos del sistema no pueden ser integrados correctamente:} aunque cada uno de los módulos cumpla con los requisitos funcionales del sistema, puede ocurrir que el rendimiento se vea degradado producto de los retardos que puede introducir las interfaces de comunicación entre los módulos.
+\newpage
 
-\textbf{Indicador:} se observan demoras o un progreso lento en la etapa de Integración. \\
-\textbf{Probabilidad de ocurrencia:} Baja. \\
-\textbf{Impacto:} Muy alto. \\
-\textbf{Estrategia a adoptar:} Mitigar (probabilidad).
-Se revisan continuamente los entregables de la etapa de Integración con el fin de mejorar su calidad.
+\item \textbf{Pérdida de interés en el proyecto:} dado que el proyecto será desarrollado para un organismo público y las decisiones administrativas están sujetas a numerosos factores, la entidad solicitante puede dejar de lado el desarrollo del sistema.
 
-\item \textbf{Las tecnologías seleccionadas no pueden ser integradas:} se utilizarán un conjunto de tecnologías que deben coexistir para realizar el procesamiento de los datos. Es posible que se encuentren incompatibilidades entre alguna de ellas y no sea posible utilizarlas de forma conjunta.
-
-\textbf{Indicador:} se observan demoras o un progreso lento en la etapa de Diseño. \\
+\textbf{Indicador:} el progreso del proyecto se ve interrumpido por falta de comunicación con los interesados. \\
 \textbf{Probabilidad de ocurrencia:} Baja. \\
 \textbf{Impacto:} Alto. \\
 \textbf{Estrategia a adoptar:} Mitigar (impacto). \\
-Se realiza un estudio comparativo de varias tecnologías para disponer de alternativas a las determinadas inicialmente.
+El proyecto será desarrollado utilizando datos de prueba generados o base de datos existentes.
 
-\item \textbf{El progreso del proyecto no es monitoreado adecuadamente:} es necesario elaborar una cierta cantidad de informes de avance. Puede ocurrir que debido a un monitoreo pobre del avance del proyecto estos documentos estén incompletos para la fecha de entrega.
+\item \textbf{Las técnicas de detección no pueden ser implementadas:} dada su complejidad, algunas técnicas de detección pueden ser difíciles de implementar.
 
-\textbf{Probabilidad de ocurrencia:} Media. \\
-\textbf{Impacto:} Bajo. \\
-\textbf{Estrategia a adoptar:} Mitigar (ocurrencia). \\
-Los cambios y avances realizados serán registrados mediante un sistema de control de versiones, agregando una breve descripción del trabajo realizado. Estas descripciones serán luego utilizadas para la elaboración de los informes de avance.
+\textbf{Probabilidad de ocurrencia:} Alta. \\
+\textbf{Impacto:} Alta. \\
+\textbf{Estrategia a adoptar:} Evitar. \\
+Se recurrirá a asesoramiento experto.
 
 \end{enumerate}
+
+\subsection*{Análisis Riesgos}
+En esta sección se muestra el análisis realizado de los riesgos del proyecto, ordenados por importancia según su severidad. \\
+
+\begin{tabular}{|l||c|c|c|}
+	
+	\hline
+	Riesgo & Imp. & \% ocur. & Sev. \\
+	\hline
+	Las técnicas de detección no pueden ser implementadas.  & 4 & 4 & 16 \\
+	No se dispone del hardware necesario. & 4 & 2 & 8 \\
+	Pérdida de interés en el proyecto. & 4 & 2 & 8 \\
+	\hline
+	
+\end{tabular}
+\captionof{table}{Lista de riesgos ordenados por severidad.}
 
 \begin{table}
 	\centering
@@ -75,25 +77,6 @@ Los cambios y avances realizados serán registrados mediante un sistema de contr
 	\end{minipage}
 \end{table}
 
-\newpage
-\subsection*{Análisis Riesgos}
-En esta sección se muestra el análisis realizado de los riesgos del proyecto, luego se definen las estrategias a adoptar y los riesgos ordenados por importancia según su severidad. \\
-
-\begin{tabular}{|l||c|c|c|}
-
-	\hline
-	Riesgo & Imp. & \% ocur. & Sev. \\
-	\hline
-	No se pueden satisfacer las restricciones de performance.  & 5 & 3 & 15 \\
-	No se dispone del hardware necesario. & 4 & 3 & 12 \\
-	Los módulos del sistema no pueden ser integrados correctamente. & 5 & 2 & 10 \\
-	Las tecnologías seleccionadas no pueden ser integradas. & 4 & 2 & 8 \\
-	El progreso del proyecto no es monitoreado adecuadamente. & 2 & 3 & 6 \\
-	\hline
-	
-\end{tabular}
-\captionof{table}{Lista de riesgos ordenados por severidad.}
-
 
 \section*{Presupuesto}
 
@@ -105,7 +88,7 @@ A continuación se detalla el presupuesto necesario para el desarrollo del proye
 	\begin{tabular}{l c c r}
 		\hline \hline
 		
-		\textbf{Bienes de capital} & & & \\ \hline
+		\textbf{Bienes} & & & \\ \hline
 		Estación de trabajo (costo de amortización)& & & \$2691. \\
 		\textit{Procesador AMD FX6} & & &\\
 		\textit{Memoria 8GB DDR3} & & & \\
@@ -129,11 +112,12 @@ A continuación se detalla el presupuesto necesario para el desarrollo del proye
 		\hline \hline
 		\textbf{Recursos humanos} & \textbf{Costo por hora} & \textbf{Horas} \\
 		Director de proyecto & \$150 & 40 & \$6000 \\
+		Codirector de proyecto & \$150 & 40 & \$6000 \\
 		Diseñador & \$110 & 84 & \$9420 \\
 		Desarrollador & \$100 & 364 & \$36400 \\
 		Tester & \$85 & 40 & \$3400 \\
 		\hline \hline
-		\textbf{Costo total} & & & \$\textbf{80659}.
+		\textbf{Costo total} & & & \$\textbf{86659}.
 	\end{tabular}
 \end{center}
 
