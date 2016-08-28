@@ -1,27 +1,28 @@
 \section*{Metodología}
 
-La metodología de desarrollo del proyecto será incremental e iterativa. Incremental porque varias componentes del sistema se desarrollarán en momentos diferentes y serán integradas cuando sean completadas. Iterativa pues se invertirán esfuerzos en revisar constantemente partes del sistema, tanto para mejorar la calidad externa como interna del software\cite{ISOIEC9126}.
+La metodología de desarrollo del proyecto será incremental e iterativa. Incremental porque varios componentes y funcionalidades del sistema se desarrollarán en momentos diferentes y serán integradas cuando sean completadas. Iterativa pues se invertirán esfuerzos en revisar constantemente partes del sistema, tanto para mejorar la calidad externa como interna del software\cite{ISOIEC9126}.
 
-Con esta metodología se puede dividir el trabajo en incrementos que son revisados constantemente a lo largo de la ejecución del proyecto. Luego de una investigación preliminar acerca de las tecnologías disponibles y sus características, correspondiente a la primera fase, se tiene el punto de partida para comenzar el desarrollo. Dado que es necesario que el sistema cumpla con los requisitos de \textit{tiempo real}, el incremento donde se implementan las funcionalidades esenciales de captura de paquetes es revisado constantemente para mejorar su calidad mientras se desarrollan los incrementos de informes y visualización (ver Plan de Tareas). Una vez todos los incrementos son terminados, serán integrados y se llevarán a cabo las pruebas de integración correspondientes.
-
-\newpage
+Dado que los requerimientos de los interesados pueden cambiar en el transcurso de la ejecución del proyecto, se propone utilizar un enfoque de desarrollo ágil. El mismo contempla la posibilidad de cambios en los alcances y en las prioridades de las diferentes funcionalidades, y fundamentalmente promueve la entrega continua de software y la inclusión de los interesados en el proceso de desarrollo.
 
 \section*{Plan de Tareas}
 
-El proyecto se divide en 4 incrementos. A continuación se da una breve descripción de los mismos:
+El proyecto se divide en 5 incrementos. A continuación se da una breve descripción de los mismos:
 
-\paragraph{Incremento 1: Diseño}\
-La primer parte del proyecto consiste en determinar que conjunto de tecnologías serán utilizadas, y elaborar una descripción a alto nivel de las diferentes componentes del sistema y cómo se relacionan.
-\paragraph{Incremento 2: \textit{Core} o Núcleo} \
-En esta etapa se implementa la funcionalidad que permite capturar la información de entrada, visualizarla en texto plano y prepararla para procesamientos posteriores. También se implementa la funcionalidades de registro de eventos en la capa de transporte.
-\paragraph{Incremento 3: Filtrado} \
-Se implementa el módulo que procesa el tráfico de la red y se implementan las funcionalidades de filtrado junto con los filtros predeterminados.
-\paragraph{Incremento 4: Visualización} \
-En este incremento se integran las funcionalidades de captura y filtrado. Además se implementa la interfaz de usuario en la plataforma determinada en la etapa de diseño.
+\paragraph{Incremento 1: Investigación preliminar}\
+La primer parte del proyecto consiste en determinar que conjunto de tecnologías serán utilizadas, y elaborará una descripción a alto nivel de las diferentes componentes del sistema. Además se realizará una investigación sobre las técnicas de modelado de comportamiento existentes con el fin de determinar cuales serán implementadas.
+\paragraph{Incremento 2: Modelado de comportamiento} \
+En esta etapa se implementarán algunas de las técnicas de modelado de comportamiento seleccionadas. Se utilizarán solo los datos provenientes de la capa de transporte y se entregará un software con una interfaz web sencilla donde se muestren los principales parámetros del modelado.
+\paragraph{Incremento 3: Detección de anomalías} \
+Se implementarán las funcionalidades de detección de anomalías y se agregará al software mecanismos de generación de alarmas. Además se mejorará la interfaz de usuario.
+\paragraph{Incremento 4: Modelado de comportamiento de subsistemas} \
+Con el fin de mejorar la identificación de anomalías se incorporará al modelo de comportamiento información de los diferentes subsistemas que componen la infraestructura de red.
+\paragraph{Incremento 5: Pruebas exhaustivas y documentación}
+Se completará el desarrollo del software y se redactará la documentación necesaria. Dado que la tasa de falsos negativos\footnote{La existencia de falsos negativos implica la existencia de ataques verdaderos que no son detectados por el IDS} debe ser mínima, se realizarán pruebas exhaustivas de funcionamiento. Una vez concluidas las pruebas, se elaborará un informe con los resultados obtenidos
 
 \ \
 
-Al finalizar la primera iteración de cada incremento se obtiene una herramienta de software con las funcionalidades descriptas y calidad de producto final, con excepción de la etapa de diseño donde se obtendrá un informe en soporte escrito o digital.
+Al finalizar la primera iteración de cada incremento se obtiene una herramienta de software con las funcionalidades descriptas y calidad de producto final, con excepción de la etapa de investigación preliminar donde se obtendrá un informe en soporte escrito o digital.
+
 
 
 \begin{table}[htbp]
@@ -29,10 +30,10 @@ Al finalizar la primera iteración de cada incremento se obtiene una herramienta
 		\begin{tabular}{|l|c|}
 			\hline 
 			Entregable & Fecha de entrega \\ \hline
-			Informe de avance 1 & 16/09/2016 \\
-			Informe de avance 2 & 04/11/2016 \\
-			Informe de avance 3 & 10/02/2016 \\
-			Informe de avance 4 & 17/03/2017 \\ \hline
+			Informe de avance 1 & 04/10/2016 \\
+			Informe de avance 2 & 08/11/2016 \\
+			Informe de avance 3 & 16/12/2016 \\
+			Informe de avance 4 & 14/02/2017 \\ \hline
 		\end{tabular}
 	\end{center}
 	\caption{Fechas de entrega de informes de avance.}
@@ -41,85 +42,138 @@ Al finalizar la primera iteración de cada incremento se obtiene una herramienta
 
 \subsubsection*{Plan de Tareas}
 
-La duración total del proyecto es de $520$ horas, con una dedicación de $20$ horas semanales. A continuación se define el plan de tareas.
+La duración total del proyecto es de $466$ horas, con una dedicación de $20$ horas semanales. A continuación se detalla el plan de tareas.
 
 \begin{enumerate}
-	\item \textbf{Diseño} (84hs)
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\item \textbf{Investigación preliminar} (66hs)
 	\begin{enumerate}
-		\item Estudio comparativo de las tecnologías disponibles. (24hs)
-		\item Diseño conceptual del sistema. (40hs)
-		\item Diseño de interfaz de usuario y filtros predeterminados. (20hs)
+		\item Estudio comparativo de las tecnologías y métodos de modelado. (24hs)
+		\item Diseño conceptual del sistema. (30hs)
+		\item Documentación. (12hs)
 	\end{enumerate}
-	\item \textbf{\textit{Core} o Núcleo} (120hs)
+	\item \textbf{Modelado de comportamiento} (84hs)
 	\begin{enumerate}
-		\item Instalación y configuración de servidor de aplicación. (32hs)
-		\item Implementación de funcionalidad de captura de tráfico de red. (52hs)
-		\item Implementación de funcionalidad de registro de eventos. (24hs)
-		\item Documento de instalación. (12hs)
+		\item Instalación y configuración de la plataforma de desarrollo. (12hs)
+		\item Implementación de funcionalidad de captura de tráfico de red. (24hs)
+		\item Implementación de modelado de tráfico. (24hs)
+		\item Implementación de intefaz web. (24hs)
 	\end{enumerate}
-	\item \textbf{Filtrado y visualización} (176hs)
+	\item \textbf{Detección de anomalías} (98hs)
 	\begin{enumerate}
-		\item Implementación de funcionalidad de filtrado en capa de red. (52hs)
-		\begin{enumerate}
-			\item Módulo de filtrado por host. (20hs)
-			\item Módulo de obtención de métricas. (32hs)
-		\end{enumerate}
-		\item Implementación de funcionalidad de filtrado en capa de transporte. (60hs)
-		\begin{enumerate}
-			\item Módulo de filtrado por servicio. (20hs)
-			\item Módulo de obtención de métricas. (40hs)
-		\end{enumerate}
-		\item Implementación de filtros predeterminados. (24hs)
-		\item Implementación de interfaz de usuario. (40hs)
+		\item Implementación de funcionalidad de detección de anomalías. (30hs)
+		\item Pruebas de implementación. (24hs)
+		\item Implementación de módulo de alarmas. (24hs)
+		\item Mejora de interfaz web. (20hs)
 	\end{enumerate}
-	\item \textbf{Integración} (140hs)
+	\newpage
+	\item \textbf{Modelado de comportamiento de subsistemas} (146hs)
 	\begin{enumerate}
-		\item Integración de funcionalidades e interfaz de usuario. (60hs)
-		\item Pruebas de integración. (40hs)
-		\item Elaboración de informe. (40hs)
+		\item Implementación de funcionalidad de captura de logs de subsistemas. (72hs)
+		\begin{itemize}
+			\item Servidores web (24hs).
+			\item Gestores de base de datos (24hs).
+			\item Firewalls (24hs).
+		\end{itemize}
+		\item Implementación de modelado de comportamiento de subsistemas. (30hs)
+		\item Pruebas de implementación. (24hs)
+		\item Implementación de funcionalidad de detección de anomalías y alarmas. (20hs)
+	\end{enumerate}
+	\item \textbf{Pruebas exhaustivas y documentación} (72hs)
+	\begin{enumerate}
+		\item Pruebas de detección. (20hs)
+		\item Elaboración de informe de desempeño. (12hs)
+		\item Elaboración de informe final. (40hs)
 	\end{enumerate}
 \end{enumerate}
 
-\begin{table}[bp]
+\subsection*{Informes de avance}
+
+Se presentarán 4 informes de avance en las fechas de finalización de cada etapa, detalladas en el Cuadro \ref{table:cronograma}. A continuación se detalla que información será incluida en cada informe:
+
+\paragraph{Informe de avance 1} 
+Contendrá los resultados obtenidos en los estudios comparativos de las tecnologías y las técnicas de modelado y detección y justificará la elección de las mismas. Además se incluirá una descripción general de la arquitectura del sistema.
+
+\paragraph{Informe de avance 2}
+Contendrá información sobre los criterios de selección de características para el modelado de tráfico de red. Se proveerá la guía de instalación y configuración de la plataforma. Además tendrá información sobre cambios realizados en los entregables anteriores y el desempeño del modelo implementado.
+
+\paragraph{Informe de avance 3}
+Contendrá información sobre los criterios de selección de características para el modelado del comportamiento de los subsistemas, y el desempeño del modelo implementado. Además se detallarán los cambios realizados en los entregables anteriores.
+
+\paragraph{Informe de avance 4}
+Se describirán las pruebas de integración del sistema. Además tendrá información sobre cambios realizados en los entregables anteriores y el desempeño general del sistema. También se incluirán los resultados de las pruebas de detección de la última iteración.
+
+\begin{table}[htbp]
 	\begin{center}	
 		\begin{tabular}{|l|c|c|c|}
 			\hline 
 			Etapa & Inicio & Finalización & Duración \\ \hline
-			Diseño & 15/08/2016 & 23/09/2016 & 5 semanas \\
-			\textit{Core} o Núcleo & 26/09/2016 & 11/11/2016 & 6 semanas \\
-			Filtrado y visualización & 14/11/2016 & 03/02/2017 & 11 semanas \\
-			Integración & 06/02/2017 & 31/03/2017 & 7 semanas \\ \hline
+			Investigación preliminar & 01/09/2016 & 30/09/2016 & 4 semanas \\
+			Modelado de comportamiento & 03/10/2016 & 04/11/2016 & 4 semanas \\
+			Detección de anomalías & 07/11/2016 & 16/12/2016 & 5 semanas \\
+			Modelado de comportamiento de subsistemas & 19/12/2016 & 18/02/2017 & 8 semanas \\
+			Pruebas exhaustivas y documentación & 20/02/2017 & 25/03/2017 & 5 semanas \\ \hline
 		\end{tabular}
 	\end{center}
 	\caption{Fechas estimativas de inicio y fin de actividades.}
 	\label{table:cronograma}
 \end{table}
 
-
-\subsection*{Informes de avance}
-
-
-Se presentarán 4 informes de avance en las fechas de finalización de cada etapa, detalladas en el Cuadro \ref{table:cronograma}. A continuación se detalla que información será incluida en cada informe:
-
-\paragraph{Informe de avance 1} 
-Contendrá los resultados obtenidos en los estudios comparativos de las tecnologías y justificará la elección de las mismas. Además se incluirá una descripción general de la arquitectura del sistema.
-
-\paragraph{Informe de avance 2}
-Contendrá información sobre el desempeño del núcleo del sistema. Se proveerá la guía de instalación y configuración de la plataforma. Además tendrá información sobre cambios realizados en los entregables anteriores.
-
-\paragraph{Informe de avance 3}
-Contendrá una descripción de los mecanismos de filtrado utilizados y los resultados obtenidos. Además tendrá información sobre cambios realizados en los entregables anteriores.
-
-\paragraph{Informe de avance 4}
-Contendrá una información sobre los avances en el desarrollo de la interfaz de usuario. Se describirán las pruebas de integración del sistema. Además tendrá información sobre cambios realizados en los entregables anteriores.
-
+\newpage
 
 \subsection*{Diagrama de Gantt}
 
-A continuación se muestra el diagrama de Gantt del proyecto.
-
-\begin{figure}[htbp!]
-	\includegraphics[scale=.4]{gantt_png}
-	\caption{Diagrama de Gantt del proyecto.}
-	\label{fig:gantt}
+\begin{figure}[hb]
+\begin{center}
+\begin{ganttchart}[
+	time slot format=isodate,
+	x unit=.6mm,
+	y unit title=.6cm,
+	y unit chart=4mm,
+	hgrid,
+	link/.style={-latex}
+	]{2016-09-01}{2017-03-29}
+	\gantttitlecalendar{year, month} \\
+	\ganttgroup{Tarea 1}{2016-09-01}{2016-09-30} \\
+	\ganttbar[name=a11]{Actividad 1.1}{2016-09-01}{2016-09-08} \\
+	\ganttbar[name=a12]{Actividad 1.2}{2016-09-10}{2016-09-30} \\
+	\ganttbar[name=a13]{Actividad 1.3}{2016-09-10}{2016-09-30} \\
+	\ganttlink{a11}{a12} 
+	\ganttlink{a11}{a13} 
+	\ganttgroup{Tarea 2}{2016-10-03}{2016-11-04} \\
+	\ganttbar[name=a21]{Actividad 2.1}{2016-10-03}{2016-10-06} \\
+	\ganttbar[name=a22]{Actividad 2.2}{2016-10-08}{2016-10-16} \\
+	\ganttbar[name=a23]{Actividad 2.3}{2016-10-18}{2016-11-04} \\
+	\ganttbar[name=a24]{Actividad 2.4}{2016-10-18}{2016-11-04} \\
+	\ganttlink{a21}{a22}
+	\ganttlink{a22}{a23}
+	\ganttlink{a22}{a24} 
+	\ganttgroup{Tarea 3}{2016-11-07}{2016-12-16} \\
+	\ganttbar[name=a31]{Actividad 3.1}{2016-11-07}{2016-11-15} \\
+	\ganttbar[name=a32]{Actividad 3.2}{2016-11-17}{2016-11-26} \\
+	\ganttbar[name=a33]{Actividad 3.3}{2016-11-28}{2016-12-16} \\
+	\ganttbar[name=a34]{Actividad 3.4}{2016-11-28}{2016-12-16} \\
+	\ganttlink{a31}{a32}
+	\ganttlink{a32}{a33}
+	\ganttlink{a32}{a34}
+	\ganttgroup{Tarea 4}{2016-12-19}{2017-02-18} \\
+	\ganttbar[name=a41]{Actividad 4.1}{2016-12-19}{2017-01-17} \\
+	\ganttbar[name=a42]{Actividad 4.2}{2017-01-19}{2017-02-10} \\
+	\ganttbar[name=a43]{Actividad 4.3}{2017-01-19}{2017-02-10} \\
+	\ganttbar[name=a44]{Actividad 4.4}{2017-02-12}{2017-02-18} \\
+	\ganttlink{a41}{a42}
+	\ganttlink{a41}{a43}
+	\ganttlink{a42}{a44}
+	\ganttlink{a43}{a44}
+	\ganttgroup{Tarea 5}{2017-02-20}{2017-03-25} \\
+	\ganttbar[name=a51]{Actividad 5.1}{2017-02-20}{2017-02-27} \\
+	\ganttbar[name=a52]{Actividad 5.2}{2017-03-06}{2017-03-25} \\
+	\ganttbar[name=a53]{Actividad 5.3}{2017-03-06}{2017-03-25}
+	\ganttlink{a51}{a52}
+	\ganttlink{a51}{a53}
+\end{ganttchart}
+\end{center}
+\caption{Diagrama de Gantt del proyecto}
 \end{figure}
+%\end{landscape}
